@@ -21,10 +21,10 @@ const lightbox = document.querySelector(".lightbox");
 const addBtn = document.querySelector(".add_btn");
 const indicator = document.querySelector(".indicator");
 const wrp = document.querySelector(".cart-content");
-let amountValue = 0;
+let amountValue = 1;
 let currentImg = 1;
 
-indicator.style.display = "none";
+
 function openMenu() {
   menu.classList.add("active");
   overlay.classList.add("active");
@@ -33,12 +33,13 @@ function closeMenu() {
   menu.classList.remove("active");
   overlay.classList.remove("active");
 }
+
 function handlePlus() {
   amountValue++;
   amount.innerText = amountValue;
 }
 function handleMinus() {
-  if (amountValue > 0) {
+  if (amountValue > 1) {
     amountValue--;
   }
   amount.innerText = amountValue;
@@ -59,6 +60,7 @@ function prevImage() {
   }
   thumbMob.src = `./images/image-product-${currentImg}.jpg`;
 }
+
 function toggleCart() {
   cart.classList.toggle("invisible");
 }
