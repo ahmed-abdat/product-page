@@ -3,125 +3,150 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
     <title>Frontend Mentor | E-commerce product page</title>
-    <!-- normalize -->
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <!-- main css -->
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <div class="container">
-        <nav>
-          <div class="left-side">
-            <img class="logo" src="./images/logo.svg" alt="" />
-            <ul class="nav">
-              <li class="nav-item"><a href="#">Collections</a></li>
-              <li class="nav-item"><a href="#">Men</a></li>
-              <li class="nav-item"><a href="#">Women</a></li>
-              <li class="nav-item"><a href="#">About</a></li>
-              <li class="nav-item"><a href="#">Contact</a></li>
+    <div class="container">
+      <!-- navbar -->
+      <nav>
+        <div class="nav_container">
+          <div class="nav_left-sec">
+            <img
+              src="./images/icon-menu.svg"
+              id="menu-btn"
+              alt="menu"
+              class="hidden menu"
+            />
+            <img src="./images/logo.svg" alt="logo" class="nav_logo" />
+            <div class="overlay"></div>
+            <ul class="nav_links">
+              <img
+                src="./images/icon-close.svg"
+                alt="close"
+                class="close-btn hidden"
+              />
+              <li class="nav_link">Collections</li>
+              <li class="nav_link">Men</li>
+              <li class="nav_link">Women</li>
+              <li class="nav_link">About</li>
+              <li class="nav_link">Contact</li>
             </ul>
           </div>
-          <div class="right-side">
-            <div class="shop">
-              <!-- shoping cart content -->
-              <div class="shoping-cart">
-                <h3>Cart</h3>
-                <div class="cart-item">
-                  <img
-                    src="./images/image-product-1-thumbnail.jpg"
-                    alt="image-product-1-thumbnail"
-                  />
-                  <div class="info">
-                    <h4>Fall Limited Edition sneakers</h4>
-                    <p>
-                      $125.00 x <span class="quantity">3</span>
-                      <span class="price">$375.00</span>
-                    </p>
-                  </div>
-                  <div class="trash">
-                    <img src="./images/icon-delete.svg" alt="icon-delete" />
-                  </div>
-                </div>
-                <div class="btn">
-                  <span>Checkout</span>
+          <div class="nav_right-sec">
+            <!-- Cart -->
+            <div class="cart-container">
+              <button class="cart-btn">
+                <span class="indicator"></span>
+                <img src="./images/icon-cart.svg" alt="cart" class="cart" />
+              </button>
+              <div class="cart-wrp invisible">
+                <p class="cart-heading">Cart</p>
+                <div class="divider"></div>
+                <div class="cart-content empty">
+                  <p>Your cart is empty</p>
                 </div>
               </div>
-              <img class="shop-icon" src="./images/icon-cart.svg" alt="" />
-              <span class="hide count">0</span>
             </div>
-            <div class="avatar">
-              <img src="./images/image-avatar.png" alt="" />
-            </div>
+            <img src="./images/image-avatar.png" alt="avatar" class="avatar" />
           </div>
-        </nav>
-      </div>
-    </header>
-
-    <!-- main Section -->
-    <section class="hero">
-      <div class="container">
-        <section class="product">
-          <div class="left-side">
-            <img src="./images/image-product-1.jpg" alt="product-1" />
-            <ul class="product-img">
-              <li class="active">
-                <img src="images/image-product-1-thumbnail.jpg" alt="" />
-              </li>
-              <li><img src="images/image-product-2-thumbnail.jpg" alt="" /></li>
-              <li><img src="images/image-product-3-thumbnail.jpg" alt="" /></li>
-              <li><img src="images/image-product-4-thumbnail.jpg" alt="" /></li>
-            </ul>
+        </div>
+      </nav>
+      <main>
+        <!-- thumbnails -->
+        <section class="thumbnails">
+          <img
+            src="./images/image-product-1.jpg"
+            alt="product"
+            class="main-thumbnail invisible-mob"
+          />
+          <div class="mobile-thumb hidden">
+            <img
+              src="./images/image-product-1.jpg"
+              class="thumb-mob"
+              alt="product"
+            />
+            <button id="next">
+              <img src="./images/icon-next.svg" alt="next" />
+            </button>
+            <button id="previous">
+              <img src="./images/icon-previous.svg" alt="previos" />
+            </button>
           </div>
-          <div class="right-side">
-            <div class="company-name">Sneaker Company</div>
-            <h1>Fall Limited Edition Sneakers</h1>
-            <p>
-              These low-profile sneakers are your perfect casual wear companion.
-              Featuring a durable rubber outer sole, they’ll withstand everything
-              the weather can offer.
-            </p>
-            <div class="group">
-              <div class="price">$125.00 <span class="discount">50%</span></div>
-            <div class="discount-price">$250.00</div>
-            </div>
-            <div class="btns">
-              <div class="quantity">
-                <div class="minus disable">
-                  <img src="./images/icon-minus.svg" alt="" />
-                </div>
-                <div class="number">1</div>
-                <div class="plus">
-                  <img src="./images/icon-plus.svg" alt="" />
-                </div>
-              </div>
-              <div class="add-to-cart">
-
-                  <img src="./images/icon-add-cart.svg" alt="" />
-  
-                <div>Add to cart</div>
-              </div>
+          <div>
+            <div class="preview">
+              <img
+                class="selected"
+                src="./images/image-product-1-thumbnail.jpg"
+                alt=""
+              />
+              <img src="./images/image-product-2-thumbnail.jpg" alt="" />
+              <img src="./images/image-product-3-thumbnail.jpg" alt="" />
+              <img src="./images/image-product-4-thumbnail.jpg" alt="" />
             </div>
           </div>
         </section>
+        <!-- content -->
+        <section class="content">
+          <p class="company">Sneaker Company</p>
+          <h1 class="title">Fall Limited Edition Sneakers</h1>
+          <p class="info">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+          <div class="price">
+            <div class="new-price">
+              <p class="now">$125.00</p>
+              <span>50%</span>
+            </div>
+            <p class="old-price">$250.00</p>
+          </div>
+          <div class="buttons">
+            <div class="amount-btn">
+              <button id="minus">
+                <img src="./images/icon-minus.svg" alt="minus" />
+              </button>
+              <p class="amount">0</p>
+              <button id="plus">
+                <img src="./images/icon-plus.svg" alt="plus" />
+              </button>
+            </div>
+            <button class="add_btn">
+              <img src="./images/icon-cart.svg" alt="cart" />
+              Add to cart
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!-- Lightbox -->
+    <div class="lightbox invisible">
+      <div class="lightbox-container">
+        <button class="close-lightbox"><img src="./images/icon-close.svg" alt="close"></button>
+        <img
+          src="./images/image-product-1.jpg"
+          alt="product"
+          class="main-thumbnail invisible-mob"
+        />
+        <div class="preview">
+          <img
+            class="selected"
+            src="./images/image-product-1-thumbnail.jpg"
+            alt=""
+          />
+          <img src="./images/image-product-2-thumbnail.jpg" alt="" />
+          <img src="./images/image-product-3-thumbnail.jpg" alt="" />
+          <img src="./images/image-product-4-thumbnail.jpg" alt="" />
+        </div>
       </div>
-    </section>
-
-    <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
-    <script src="./js/main.js"></script>
+    </div>
+    <script src="./app.js"></script>
   </body>
 </html>
